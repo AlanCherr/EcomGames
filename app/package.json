@@ -1,0 +1,22 @@
+{
+  "name": "ecomgames",
+  "version": "1.0.0",
+  "description": "Ecommerce de videojuegos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanCherr/EcomGames.git"
+  },
+  "author": "Alan Cherñakoff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanCherr/EcomGames/issues"
+  },
+  "homepage": "https://github.com/AlanCherr/EcomGames#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
