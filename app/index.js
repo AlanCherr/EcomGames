@@ -1,8 +1,14 @@
 const express = require("express");
-const app = express();
 const users = require("./routes/usersRoute");
 const games = require("./routes/gamesRoute");
+const bp = require("body-parser");
+const app = express();
 const port = process.env.PORT || 8080;
+
+
+//seteo body parser para toda la app desde aca
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: true }));
 
 app.use("/users",users);
 app.use("/games",games);
