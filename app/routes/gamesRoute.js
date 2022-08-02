@@ -60,16 +60,26 @@ router.delete("/:id", (req, res)=>{
 })
 
 router.post("/",(req,res)=>{
-    bd.query("INSERT INTO juegos SET ?",[req.body], (error, results)=>{
+    bd.query("SELECT * FROM juegos WHERE title = ?", req.body.title,(err, results)=>{
         try {
-            if(error){
-                throw new Error(error)
-            }
-            else{
-                res.send("El juego se cargo correctamente");
+            if(results.length == 0){
+                bd.query("INSERT INTO juegos SET ?",[req.body], (error, results)=>{
+                    try {
+                        if(error){
+                            throw new Error(error)
+                        }
+                        else{
+                            res.send("El juego se cargo correctamente");
+                        }
+                    } catch (error) {
+                        res.status(500).send(error.message)
+                    }
+                })
+            }else{
+                throw new Error("Ya existe un juego con ese titulo.")
             }
         } catch (error) {
-            res.status(500).send(error.message)
+            res.send(error.message).status(500);
         }
     })
 })

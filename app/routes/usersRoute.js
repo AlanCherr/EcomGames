@@ -54,15 +54,35 @@ router.delete("/:id",(req,res)=>{
 })
 
 router.post("/",(req,res)=>{
-    bd.query("INSERT INTO usuarios SET ?",[req.body], (err, results)=>{
+    bd.query(`SELECT * FROM usuarios WHERE (phone = '${req.body.phone}' OR email = '${req.body.email}' 
+    OR username = '${req.body.username}')`,(err,result)=>{
         try {
-            if(err)
-            throw error;
-            res.json(results);
+            if(result.length === 0){
+                bd.query("INSERT INTO usuarios SET ?",[req.body], (err, results)=>{
+                    try {
+                        if(err)
+                        throw new Error(err);
+                        res.send("Se cargo correctamente");
+                    } catch (error) {
+                        res.status(500).send(error)
+                    }
+                    })
+            }else{
+                console.log(result);
+                if(result[0].phone == req.body.phone ){
+                    throw new Error("El telefono ya existe");
+                }
+                if(result[0].email === req.body.email ){
+                    throw new Error("El mail ya existe");
+                }
+                if(result[0].username == req.body.username){
+                    throw new Error("El nombre de usuario ya existe");
+                }
+            }
         } catch (error) {
-            res.status(500).send(error)
+            res.status(500).send(error.message);
         }
-        })
+    })
 })
 
 router.put("/:id", (req,res)=>{
