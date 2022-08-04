@@ -1,0 +1,32 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+    
+    background-color: rgb(39, 39, 193);
+}
+.subcontainer{
+    flex-wrap: wrap;
+    display: flex;
+    font-family: serif;
+    font-size: 40px;
+    color: aliceblue;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+.searchContainer{
+    display: flex;
+    align-items: center;
+    width: 33%;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: space-around;
+}
