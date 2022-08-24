@@ -1,19 +1,20 @@
-var mysql = require("mysql");
-var conexion = mysql.createConnection({
+const mysql = require("promise-mysql")
+
+
+const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: 'ecomgames',
-    port: 3306
+    database: 'ecomgames'
 })
-
-conexion.connect((error)=>{ 
-        if(error){
-           throw error;
-        }else{
-           console.log('Conexion correcta.');
-        }
-})
+ 
+const getConnection = ()=>{
+    return connection
+}
+ 
 
 
-module.exports = conexion;
+
+module.exports = {
+    getConnection
+}
