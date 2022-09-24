@@ -1,7 +1,5 @@
 .contenedor{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 60%;
+    justify-content: space-around;
     flex-wrap: wrap;
 }

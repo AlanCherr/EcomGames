@@ -11,8 +11,13 @@ const query = async(sql,objeto) => {
         const resultObj = await connection.query(sql,objeto)
         return resultObj;
     }else{
-        const result = await connection.query(sql)
-        return result;
+        try{
+
+            const result = await connection.query(sql)
+            return result;
+        }catch(e){
+            console.log(e)
+        }
     }
 }
 

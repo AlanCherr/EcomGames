@@ -2,9 +2,9 @@
 import React from "react";
 import "../styles/search.css"
 
-function Search() {
+function Search(props) {
     return (
-      <input type="text" className="search"/>
+      <input type="search" className="search" placeholder={props.value}/>
     );
   }
   

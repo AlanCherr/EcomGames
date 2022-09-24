@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 8080;
 
-
+//localhost:3000/
 //seteo body parser para toda la app desde aca
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
@@ -16,6 +16,7 @@ app.use(cors());
 app.use("/users",users);
 app.use("/games",games);
 app.use("/library",library);
+
 app.listen(port, ()=>{
     try {
         console.log("Server on port: "+ port);

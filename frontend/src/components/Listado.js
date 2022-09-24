@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/listado.css"
 import Card from "./Card";
+import CardAdmin from "./CardAdmin";
 
 function Listado(props) {
 
@@ -13,13 +14,25 @@ function Listado(props) {
   }, []);
     return (
       <>
-      <div className="contenedor">
-            {juego.map((juego)=>{
+        {
+          props.admin ?(
+            <div >
+              {juego.map((juego)=>{
               return(
-                    <Card props={juego}/>
+                  <CardAdmin props={juego}/>
               )
             })}
-      </div>
+            </div>
+          ):(
+            <div className="contenedor">
+                  {juego.map((juego)=>{
+                  return(
+                        <Card props={juego}/>
+                  )
+            })}
+            </div>
+          )
+        }
       </>
     );
   }

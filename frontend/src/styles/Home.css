@@ -1,0 +1,35 @@
+.homeContainer{
+    background-color: rgb(163, 39, 39) ;
+    text-align: center;
+    color:  rgb(19, 19, 65);;
+    width: 100%;
+  
+}
+.subcontainer{
+    display: flex;
+    align-items: flex-start;
+    height: auto;
+    
+}
+
+.listado{
+    width: 50%;
+    margin: 2% 0%;
+    height: auto;
+}
+
+.button{
+    width: 100%;
+    text-align: center;
+}
+.carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    
+}
+
+.actionButton{
+    width: 20%;
+}

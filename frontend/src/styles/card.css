@@ -1,28 +1,40 @@
 .card{
     width: 230px;
-    height: 340px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(19, 19, 65);
+    
 
 }
 
+.headerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+
 .contCard{
+    
+    margin: 5% auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 400px;
+    
   
 }
 
 .title{
-    margin-top: 10%;
     color: aliceblue;
 }
 .price{
-    margin: 10%;
+    margin:  5%;
+    font-size: 30px;
     color: aliceblue;
 }
 .image{
@@ -30,9 +42,13 @@
    width: 200px;
 }
 .actionscard{
-    margin-left: 6%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 5%;
+}
+
+.buttonCard{
+    margin: 0% 2%;
 }

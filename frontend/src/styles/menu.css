@@ -2,8 +2,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 60px;
+    height: auto;
     align-items: center;
+    padding: 2%;
     
     background-color: rgb(39, 39, 193);
 }
@@ -21,12 +22,24 @@
 .searchContainer{
     display: flex;
     align-items: center;
-    width: 33%;
+    width: 50%;
+    position: relative;
+    margin-top: 2%;
 }
 
 .actions{
+    margin-top: 2%;
     display: flex;
     align-items: center;
     width: 200px;
     justify-content: space-around;
+}
+.input-icon {
+	color: #191919;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 5px;
+	top: 50%;
+	transform: translateY(-50%);
 }

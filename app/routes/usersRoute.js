@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const userController = require("./controllers/usersController");
 
+//localhost:3000/users/
 router.get("/",userController.list)
 
 
